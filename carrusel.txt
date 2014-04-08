@@ -23,16 +23,8 @@ function slidenex(){
 
 
 <div class="mov-academicos">
-						
-						<div id="scroll-academicos">
-						<?php   
-						query_posts('showposts=16&cat=6'); ?>
-						<?php while (have_posts()) : the_post(); ?>
-					  
-
-							
-						<div class="slider-cont-academico">
-							
+	<div id="scroll-academicos">
+		<div class="slider-cont-academico">
 								<a href="<?php the_permalink() ?>">
 								<div class="slider-cont-img"> 	
 								<?php echo the_post_thumbnail(array(104,107));  ?>

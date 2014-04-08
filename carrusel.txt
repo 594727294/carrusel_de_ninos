@@ -1,0 +1,111 @@
+-------- JS --------
+
+
+var tope = 0;
+
+function slideprev(){
+	if (tope<266){
+	  tope = tope+133;
+	  $("#scroll-academicos").animate({left:"-=+133" }); 
+	} 
+}
+
+
+function slidenex(){
+	if (tope>0 ){
+           tope= tope-133;
+	   $("#scroll-academicos").animate({left:"-=-133" }); 
+	}
+			
+}
+
+------- HTML --------
+
+
+<div class="mov-academicos">
+						
+						<div id="scroll-academicos">
+						<?php   
+						query_posts('showposts=16&cat=6'); ?>
+						<?php while (have_posts()) : the_post(); ?>
+					  
+
+							
+						<div class="slider-cont-academico">
+							
+								<a href="<?php the_permalink() ?>">
+								<div class="slider-cont-img"> 	
+								<?php echo the_post_thumbnail(array(104,107));  ?>
+								</div>
+								<p class="titulo-academicos"><?php the_title(); ?></p>
+								
+								</a>
+						</div>
+			
+						
+						<?php endwhile; wp_reset_query(); ?>	
+						</div>
+					</div>
+
+
+-------- CSS --------
+
+
+.slider-cont-academico
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 116px;
+	height: 178px;
+	margin: 0px 11px 0px 1px;
+	background: #e6e2e2;
+	*display: inline;
+	*float: left;
+}
+.slider-cont-academico img{
+		display:block;
+		margin:5px auto 0 auto;	
+}
+.slider-cont-academico p
+{
+	margin: 0;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 6px 0px 0px 5px;
+}
+
+.slider-cont-academico .ticulos-categoria 
+{
+font-size: 8px;
+
+}
+
+.slider-cont-academico .ticulos-academico 
+ {
+	font-size: 11px;
+}
+
+
+
+.slider-cont-academico span
+{
+	font-size: 11px;
+	padding: 0px 0px 0px 5px;
+}
+
+.slider-cont-img 
+{
+	width: 104px;
+	height: 102px;
+	display: block;
+	margin: 5px auto 0 auto;
+}
+
+.slider-cont-img img
+{
+	height: 100%;
+	width: 100%;
+	display: block;
+	margin: 0 auto 0 auto;
+}
